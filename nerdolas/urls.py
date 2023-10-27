@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import todos, detalhar, sugerir, atualizar, apagar
+from .views import Todos, Detalhar, sugerir, atualizar, apagar
 
 urlpatterns = [
-    path('', todos, name='todos'),
-    path('<int:id>', detalhar, name='detalhar'),
+    path('', Todos.as_view(), name='todos'),
+    path('<int:id>', Detalhar.as_view(), name='detalhar'),
     path('sugerir/', sugerir, name='sugerir'),
     path('atualizar/<int:id>', atualizar, name='atualizar'),
     path('deletar/<int:id>', apagar, name='apagar')
