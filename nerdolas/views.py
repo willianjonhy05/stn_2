@@ -33,9 +33,6 @@ class Detalhar(TemplateView):
         context['nerd'] = nerd
         return context
 
-def detalhar(request, id):
-    nerd = Nerd.objects.get(id=id)
-    return render(request, 'detalhar.html', {'nerd': nerd})
 
 def sugerir(request):
     if request.method == 'POST':
